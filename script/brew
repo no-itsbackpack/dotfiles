@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Make sure we’re using the latest Homebrew.
+brew update
+
+# Upgrade any already-installed formulae.
+brew upgrade
+
+# Install GNU core utilities (those that come with macOS are outdated).
+brew install coreutils
+
+# Install goodies
+brew install git
+brew install openssl
+brew install postgresql
+brew install rbenv
+brew install ruby-build
+brew install the_silver_searcher
+brew install yarn
+brew install tree
+brew install wget
+
+brew cleanup

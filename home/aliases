@@ -1,0 +1,8 @@
+alias ga='git add "$@"'
+alias gd='git d "$@"'
+alias gs='git status "$@"'
+alias gh='git hist "$@"'
+alias gca='git commit --amend'
+alias gcm="git commit -m"
+alias pgrestart='pg_ctl -D /usr/local/var/postgres/ -l logfile stop -m fast;pg_ctl -D /usr/local/var/postgres/ -l logfile start;sleep 2;pg_ctl -D /usr/local/var/postgres/ -l logfile status'
+alias gclean='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'

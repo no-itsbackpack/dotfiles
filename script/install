@@ -1,0 +1,21 @@
+#!/bin/bash
+
+DOTFILES_ROOT="${HOME}/.dotfiles"
+DOTFILES_REPO="git@github.com:paddingtonsbear/dotfiles.git"
+
+if [[ ! -d ${DOTFILES_ROOT} ]]; then
+  git clone ${DOTFILES_REPO} ${DOTFILES_ROOT}
+fi
+
+cd ${DOTFILES_ROOT}
+
+# zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# symlink files
+script/bootstrap
+
+# switch shell to zsh
+if [ $SHELL != '/bin/zsh' ]; then
+	chsh -s /bin/zsh
+fi
