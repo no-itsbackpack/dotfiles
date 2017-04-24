@@ -9,3 +9,17 @@ alias gclean='git branch --merged master | grep -v "\* master" | xargs -n 1 git 
 alias pgrestart='brew services restart postgresql'
 alias be='bundle exec'
 alias brake='bundle exec rake'
+alias     ..="cd .."
+alias    ...="cd ../.."
+alias   ....="cd ../../.."
+alias  .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias l="ls -lFGgohq"
+alias pgrestart='pg_ctl -D /usr/local/var/postgres/ -l logfile stop -m fast;pg_ctl -D /usr/local/var/postgres/ -l logfile start;sleep 2;pg_ctl -D /usr/local/var/postgres/ -l logfile status'
+
+# override cd b/c I always want to list dirs after I cd
+# note that this won't work with rvm b/c it overrides cd.
+cd() {
+  builtin cd "$@"
+  l
+}
