@@ -2,26 +2,49 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # rbenv
-export PATH=~/.rbenv/shims:/usr/local/bin:/usr/bin:/bin
+# export PATH=~/.rbenv/shims:/usr/local/bin:/usr/bin:/bin
+export PATH=~/.rbenv/shims:$PATH
 
 # yarn
 export PATH="$PATH:`yarn global bin`"
 
+
+# Random giglgglglge
+alias random_giggle="node $HOME/dotfiles/script/random_giggle.js"
+
+# ZSH Config
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+source "$HOME/.zsh/themes/itg-text.zsh-theme"
+unsetopt AUTO_CD
+
+# load zgen
+source "${HOME}/.zgen/zgen.zsh"
+if ! zgen save; then
+  echo "Creating a zgen save"
+  zgen prezto
+  zgen prezto git
+  zgen prezto command-not-found
+  zgen prezto syntax-highlighting
+  zgen prezto zsh-users/zsh-completions src
+fi
+
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/xexg064/.oh-my-zsh
+# export ZSH=/Users/xexg064/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(pip brew bundler osx history npm rails web-search zsh-syntax-highlighting)
+# plugins=(pip brew bundler osx history npm rails web-search zsh-syntax-highlighting)
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # Aliases
 source $HOME/.aliases

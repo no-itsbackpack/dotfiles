@@ -100,3 +100,8 @@ settings.yml
 # Sublime Text
 .sublime-project
 .un
+
+# Text files
+*.txt
+
+logfile
