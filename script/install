@@ -15,6 +15,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 # zprezto
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
+# zgen
+git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
+
 # symlink files
 script/bootstrap
 
