@@ -9,7 +9,7 @@ Always read a script before you curl: [https://github.com/paddingtonsbear/dotfil
 
 This will install:
 
-- [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+- [zsh](https://github.com/robbyrussell/oh-my-zsh)
 - [rbenv](https://github.com/sstephenson/rbenv)
 - [ruby-build](https://github.com/sstephenson/ruby-build)
 - various config files
