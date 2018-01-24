@@ -5,8 +5,10 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export PATH=~/.rbenv/shims:/usr/local/bin:/usr/bin:/bin
 export PATH=~/.rbenv/shims:$PATH
 
+export EDITOR='atom --wait'
+
 # yarn
-export PATH="$PATH:`yarn global bin`"
+# export PATH="$PATH:`yarn global bin`"
 
 
 # Random giglgglglge
@@ -30,6 +32,9 @@ if ! zgen save; then
   zgen prezto zsh-users/zsh-completions src
 fi
 
+# zsh modules
+rm -f ~/.zcompdump; compinit
+
 # Aliases
 source $HOME/.aliases
 
@@ -41,5 +46,7 @@ prompt_context() {
   fi
 }
 
-# autojump config
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
