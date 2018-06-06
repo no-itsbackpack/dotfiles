@@ -1,13 +1,27 @@
+RUBIES=(/Users/gomezelom/.rubies/rub*)
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# use atom as default editor
+export EDITOR="/usr/local/bin/atom --wait"
 
 # rbenv
 # export PATH=~/.rbenv/shims:/usr/local/bin:/usr/bin:/bin
 export PATH=~/.rbenv/shims:$PATH
 
+# brew paths
+PATH=$PATH:/usr/local/sbin
+
 # yarn
 export PATH="$PATH:`yarn global bin`"
 
+alias gollum="ssh deployer@ec2-54-68-156-172.us-west-2.compute.amazonaws.com"
+alias death_eaters="ssh deployer@ec2-52-40-170-84.us-west-2.compute.amazonaws.com"
+alias phoenix="ssh deployer@ec2-34-208-213-150.us-west-2.compute.amazonaws.com"
+alias gollum_db="psql -U deployer -h gollum-database.c5j9f1hequ4g.us-west-2.rds.amazonaws.com -p 5432 gollum_production"
 
 # Random giglgglglge
 alias random_giggle="node $HOME/dotfiles/script/random_giggle.js"
@@ -30,21 +44,8 @@ if ! zgen save; then
   zgen prezto zsh-users/zsh-completions src
 fi
 
-# Path to your oh-my-zsh installation.
-# export ZSH=/Users/xexg064/.oh-my-zsh
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="agnoster"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-# plugins=(pip brew bundler osx history npm rails web-search zsh-syntax-highlighting)
-
-# source $ZSH/oh-my-zsh.sh
+# zsh modules
+rm -f ~/.zcompdump; compinit
 
 # Aliases
 source $HOME/.aliases
@@ -57,5 +58,6 @@ prompt_context() {
   fi
 }
 
-# autojump config
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
