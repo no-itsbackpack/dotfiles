@@ -16,8 +16,10 @@ alias  .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias l="ls -lFGgohq"
 alias pgrestart='pg_ctl -D /usr/local/var/postgres/ -l logfile stop -m fast;pg_ctl -D /usr/local/var/postgres/ -l logfile start;sleep 2;pg_ctl -D /usr/local/var/postgres/ -l logfile status'
+alias ne='PATH=$(npm bin):$PATH'
+alias edit_secrets="EDITOR='atom --wait' bundle exec rails secrets:edit"
 
-# override cd b/c I always want to list dirs after I cd
+# zsh hook for changing PWD: I always want to list dirs after I cd
 # note that this won't work with rvm b/c it overrides cd.
 function chpwd() {
   emulate -L zsh
