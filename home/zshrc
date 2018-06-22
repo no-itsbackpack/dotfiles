@@ -1,6 +1,6 @@
-RUBIES=(/Users/gomezelom/.rubies/rub*)
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+#RUBIES=(/Users/gomezelom/.rubies/rub*)
+#source /usr/local/share/chruby/chruby.sh
+#source /usr/local/share/chruby/auto.sh
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -20,7 +20,6 @@ export PATH=$PATH:/usr/local/sbin
 
 alias gollum="ssh deployer@ec2-54-68-156-172.us-west-2.compute.amazonaws.com"
 alias death_eaters="ssh deployer@ec2-52-40-170-84.us-west-2.compute.amazonaws.com"
-alias phoenix="ssh deployer@ec2-34-208-213-150.us-west-2.compute.amazonaws.com"
 alias gollum_db="psql -U deployer -h gollum-database.c5j9f1hequ4g.us-west-2.rds.amazonaws.com -p 5432 gollum_production"
 
 # Random giglgglglge
@@ -30,7 +29,8 @@ alias random_giggle="node $HOME/dotfiles/script/random_giggle.js"
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
-source "$HOME/.zsh/themes/itg-text.zsh-theme"
+
+source "$HOME/.itg-text.zsh-theme"
 unsetopt AUTO_CD
 
 # load zgen
