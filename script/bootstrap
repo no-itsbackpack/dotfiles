@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# script by zach holman, modified
-
 cd "$(dirname "$0")/.."
 
 DOTFILES_ROOT=$(pwd)
